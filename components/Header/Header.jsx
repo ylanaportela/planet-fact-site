@@ -1,12 +1,18 @@
 import header from './header.module.scss'
 import Link from 'next/link'
 import Datas from '../../data.json'
+import image from  './icon-source.svg'
+
+
 
 export default function Header(){
     return(
-        <header>
+        <header className={header.container}>
             <div className={header.title}>
                 <h1>THE PLANETS</h1>
+            </div>
+            <div>
+                <img src={image} alt='Icon of menu hamburguer'></img>
             </div>
 
             <ul>
@@ -19,6 +25,7 @@ export default function Header(){
                     </li>
             )})
             }
+            
                
             </ul>
         </header>
