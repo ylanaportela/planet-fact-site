@@ -1,7 +1,6 @@
 import header from './header.module.scss'
 import Link from 'next/link'
 import Datas from '../../data.json'
-import image from  './icon-source.svg'
 
 
 
@@ -12,7 +11,7 @@ export default function Header(){
                 <h1>THE PLANETS</h1>
             </div>
             <div>
-                <img src={image} alt='Icon of menu hamburguer'></img>
+                <img src='/assets/icon-hamburger.svg' alt='Icon of menu hamburguer'/>  
             </div>
 
             <ul>
@@ -25,7 +24,6 @@ export default function Header(){
                     </li>
             )})
             }
-            
                
             </ul>
         </header>
