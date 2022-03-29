@@ -1,14 +1,22 @@
 @use '../../styles/style.scss' as style;
 
 .container{
-    padding: 3%;
-    height: 8%;
-}
-
-.title{
-    width: 100%;
     height: 100%;
 }
+
+.menu{
+    padding: 4%;
+    height: 8%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid #FFFFFF80;
+}
+
+// .title{
+    
+// }
 
 .title h1{
     color: #fff;
@@ -16,3 +24,32 @@
     font-family: style.$font-Antonio;
 }
 
+.button{
+    background-color: transparent;
+    border: none;
+}
+
+
+.nav{
+    height: 92%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.list{
+    height: 80%;
+    width: 100%;    
+
+}
+
+.card{
+    height: 10%;
+    list-style: none;
+}
+
+.link{
+    color: #fff;
+    text-decoration: none;
+    font-family: style.$font-Spartan;
+}
