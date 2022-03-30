@@ -1,6 +1,7 @@
 import header from './header.module.scss'
 import Link from 'next/link'
 import Datas from '../../data.json'
+import Icon from '../Icon'
 
 
 export default function Header() {
@@ -21,9 +22,12 @@ export default function Header() {
                         return (
                             <li key={data.name} className={header.card}>
 
+                                <Icon name={`${header.oval} ${data.name.toLowerCase()}`} />
+
                                 <Link href={`/${data.name}`}>
                                     <a className={header.link}>{data.name.toUpperCase()}</a>
                                 </Link>
+                                
                                 <img src='/assets/icon-chevron.svg'/>
                             </li>
                         )

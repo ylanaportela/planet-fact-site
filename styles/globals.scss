@@ -1,3 +1,5 @@
+@use './style.scss' as style;
+
 *{
   margin: 0;
   padding: 0;
@@ -12,4 +14,36 @@ body{
 
 main{
   height: 100vh;
+}
+
+.mercury{
+  fill: style.$icon-Mercury;
+}
+
+.venus{
+  fill: style.$icon-Venus;
+}
+
+.earth{
+  fill: style.$icon-Earth;
+}
+
+.mars{
+  fill: style.$icon-Mars;
+}
+
+.jupiter{
+  fill: style.$icon-Jupiter;
+}
+
+.saturn{
+  fill: style.$icon-Saturn;
+}
+
+.uranus{
+  fill: style.$icon-Uranus;
+}
+
+.neptune{
+  fill: style.$icon-Neptune;
 }
