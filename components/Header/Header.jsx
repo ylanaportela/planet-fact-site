@@ -12,6 +12,17 @@ export default function Header() {
 
     useEffect(()=>{
         setWidth(window.innerWidth)
+        if(width >= 768){
+            setActiveMenu(true)
+        }
+
+        window.addEventListener('resize', ()=>{
+            setWidth(window.innerWidth)
+            if(width >= 768){
+                setActiveMenu(true)
+            }
+        } )
+    
     })
 
     function handleClick(){
@@ -39,17 +50,8 @@ export default function Header() {
 
 
             {   
-               width == 375 && activeMenu == false ? 
-                    <div className={header.selection}>
-                        <ul className={header.listSelection}>
-                            <li>OVERVIEW</li>
-                            <li>STRUCTURE</li>
-                            <li>SURFACE</li>
-                        </ul>
-                    </div>
-                : 
-                    <nav  className={header.nav}>
-
+               activeMenu === true ?
+               <nav  className={header.nav}>
                         <ul className={header.list}>
                             {Datas.map(data => {
                                 return (
@@ -67,9 +69,17 @@ export default function Header() {
                             })
                             }
                         </ul>
-
                     </nav> 
+                :
 
+                <div className={header.selection}>
+                        <ul className={header.listSelection}>
+                            <li>OVERVIEW</li>
+                            <li>STRUCTURE</li>
+                            <li>SURFACE</li>
+                        </ul>
+                    </div>
+                    
             }
             
         </header>

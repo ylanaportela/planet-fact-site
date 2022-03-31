@@ -2,14 +2,14 @@
 
 .container{
     width: 100%;
-    height: 100%;
+    height: 15%;
     display: flex;
     flex-direction: column;
 }
 
 .menu{
     padding: 4%;
-    height: 8%;
+    height: 55%;
     display:flex;
     justify-content: space-between;
     align-items: center;
@@ -39,7 +39,7 @@
 }
 
 .selection{
-    height: 7%;
+    height: 45%;
     border-bottom: 1px solid #FFFFFF50;
 }
 
@@ -57,10 +57,12 @@
 
 
 .nav{
-    height: 92%;
+    width: 100%;
+    height: 90vh;
+    position: absolute;
+    top: 8%;
     display: flex;
     align-items: center;
-    transition-delay: 1s;
 }
 
 .list{
@@ -112,6 +114,7 @@
     }
     
     .menu{
+        height: 40%;
         padding: 0;
         border: none;
         justify-content: center;
@@ -121,11 +124,13 @@
         display: none;
     }
     .nav{
+        height: 20%;
         height: 10%;
         padding: 0;
     }
 
     .list{
+        height: 100%;
         padding: 0;
         flex-direction: row;
         justify-content: space-around;
@@ -143,6 +148,10 @@
     }
 
     .oval, .item img{
+        display: none;
+    }
+
+    .selection{
         display: none;
     }
 }
