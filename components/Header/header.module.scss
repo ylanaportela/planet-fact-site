@@ -1,7 +1,10 @@
 @use '../../styles/style.scss' as style;
 
 .container{
+    width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu{
@@ -11,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    border-bottom: 1px solid #FFFFFF80;
+    border-bottom: 1px solid #FFFFFF50;
 }
 
 .title h1{
@@ -25,33 +28,61 @@
     border: none;
 }
 
+.button{
+    .buttonDefault{
+        fill: #fff;
+    }
+
+    .buttonActive{
+        fill: #FFFFFF80;
+    }
+}
+
+.selection{
+    height: 7%;
+    border-bottom: 1px solid #FFFFFF50;
+}
+
+.listSelection{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style:none;
+    align-items: center;
+    font-size: 9px;
+    font-weight: bold;
+    font-family: style.$font-Spartan;
+    color: #FFFFFF50;
+}
+
 
 .nav{
     height: 92%;
-    padding: 5%;
     display: flex;
     align-items: center;
+    transition-delay: 1s;
 }
 
 .list{
-    height: 80%;
+    height: 100%;
     width: 100%;
-    padding: 10%;
+    padding: 10% 7%;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.card{
+.item{
     width: 100%;  
     height: 10%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #FFFFFF30;
 }
 
-.card > *{
+.item > *{
     height: min-content;
 }
 
@@ -72,7 +103,69 @@
     text-decoration: none;   
 }
 
+@media (min-width: 768px){
+
+    .container{
+        height: 15%;
+        justify-content: space-around;
+        border-bottom: 1px solid #FFFFFF80;
+    }
+    
+    .menu{
+        padding: 0;
+        border: none;
+        justify-content: center;
+    }
+
+    .button{
+        display: none;
+    }
+    .nav{
+        height: 10%;
+        padding: 0;
+    }
+
+    .list{
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .item{
+        width: min-content;
+        display: block;
+    }
+
+    .link{
+        margin: 0;
+        font-size: 11px;
+        color: #FFFFFF80;
+    }
+
+    .oval, .item img{
+        display: none;
+    }
+}
+
+@media (min-width: 1024px){
+    .container{
+        height: 11%;
+        flex-direction: row;
+        padding: 0px 20px;
+    }
+
+    .menu, .nav{
+        width: 50%;
+        height: 100%;
+    }
+
+    .menu{
+        justify-content: left;
+    }
+
+    .list{
+        align-items: center;
+    }
 
 
-
-
+}
