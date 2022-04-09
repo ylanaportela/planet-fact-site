@@ -5,8 +5,8 @@ import Icon from '../Icon'
 import { useEffect, useState } from 'react'
 import IconMenu from '../IconMenu'
 
-export default function Header() {
-
+export default function Header(props) {
+    
     const [ activeMenu, setActiveMenu ] = useState(false)
     const [width, setWidth] = useState(0)
 
@@ -66,7 +66,7 @@ export default function Header() {
                                         <img src='/assets/icon-chevron.svg'/>
                                     </li>
                                 )
-                            })
+                            })  
                             }
                         </ul>
                     </nav> 
@@ -74,12 +74,12 @@ export default function Header() {
 
                 <div className={header.selection}>
                         <ul className={header.listSelection}>
-                            <li>OVERVIEW</li>
-                            <li>STRUCTURE</li>
-                            <li>SURFACE</li>
+                            <li><button onClick={() => props.changeState('overview')}>OVERVIEW</button></li>
+                            <li><button onClick={() => props.changeState('structure')}>STRUCTURE</button></li>
+                            <li><button onClick={() => props.changeState('geology')}>SURFACE</button></li>
                         </ul>
-                    </div>
-                    
+                </div>
+    
             }
             
         </header>
