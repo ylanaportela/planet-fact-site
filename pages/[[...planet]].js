@@ -2,7 +2,7 @@ import Header from "../components/Header/Header"
 import Head from 'next/head'
 import Datas from '../data.json'
 import index from '../styles/index.module.scss'
-import { useMemo } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 export function getServerSideProps(context) {
 
@@ -19,11 +19,18 @@ export function getServerSideProps(context) {
 }
 
 
-export default function Home({ planet }) {
+export default function Home({ planet}) {
+
+  const [ state, setState ] = useState('overview')
+  
 
   const currentPlanet = useMemo(() => {
     return Datas.find(data => data.name === planet)
   }, [planet])
+
+  const attribute = useMemo(()=>{
+    return currentPlanet[state]
+  }, [currentPlanet, state])
 
   if (!currentPlanet) {
     return <div>
@@ -42,13 +49,13 @@ export default function Home({ planet }) {
       </Head>
 
       <main>
-        <Header />
+        <Header changeState={state => setState(state)}/>
 
         <section className={index.section}>
 
           <div className={index.informations}>
             <div className="image">
-              <img src={ currentPlanet.images.planet} />
+              <img src={ currentPlanet.images.planet} className={index.image}/>
             </div>
 
             <div className={index.text}>
@@ -57,7 +64,9 @@ export default function Home({ planet }) {
                 <h2>{currentPlanet.name}</h2>
               </div>
 
-              <div className={index.paragraph}></div>
+              <div className={index.paragraph}>
+                <p>{attribute.content}</p>
+              </div>
               <div className={index.source}></div>
             </div>
 
