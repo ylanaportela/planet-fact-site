@@ -49,10 +49,33 @@
     justify-content: space-around;
     list-style:none;
     align-items: center;
+}
+
+.listSelection > *{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonSelectionDeafult{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
     font-size: 9px;
     font-weight: bold;
     font-family: style.$font-Spartan;
     color: #FFFFFF50;
+}
+
+.buttonSelectionActive{
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    font-size: 9px;
+    font-weight: bold;
+    font-family: style.$font-Spartan;
+    color: #fff;
 }
 
 
@@ -63,6 +86,7 @@
     top: 8%;
     display: flex;
     align-items: center;
+    background-color: #070724;
 }
 
 .list{
@@ -105,6 +129,8 @@
     text-decoration: none;   
 }
 
+
+
 @media (min-width: 768px){
 
     .container{
@@ -123,10 +149,12 @@
     .button{
         display: none;
     }
+
     .nav{
         height: 20%;
         height: 10%;
         padding: 0;
+        position: initial;
     }
 
     .list{
@@ -139,6 +167,7 @@
     .item{
         width: min-content;
         display: block;
+        border: none;
     }
 
     .link{
@@ -146,6 +175,11 @@
         font-size: 11px;
         color: #FFFFFF80;
     }
+
+    .link:active{
+        color: #fff;
+    }
+
 
     .oval, .item img{
         display: none;
