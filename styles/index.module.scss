@@ -1,0 +1,34 @@
+@use './style.scss' as style;
+
+.section{
+    height: 85%;
+    padding: 5% 7%;
+    background-image: url('../public/assets/background-stars.svg');
+}
+
+.informations{
+    height: 100%;
+}
+
+.text{
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.planetName > *{
+    font-size: 40px;
+    font-family: style.$font-Antonio;
+    color: #fff;
+    text-align: center;
+    font-weight: normal;
+}
+
+.paragraph{
+    
+}
+
+
+
+
