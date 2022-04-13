@@ -10,7 +10,7 @@ export default function Header(props) {
     
     const [ activeMenu, setActiveMenu ] = useState(false)
     const [width, setWidth] = useState(0)
-    const [activeButton, setActiveButton] = useState('')
+    const [activeButton, setActiveButton] = useState('overview')
 
     useEffect(()=>{
         setWidth(window.innerWidth)
@@ -79,7 +79,7 @@ export default function Header(props) {
                         <ul className={header.listSelection}>
                             <li>
                                 <button 
-                                className={  activeButton === 'overview' ? `button-selection ${header.buttonSelectionActive} ${planet.Datas}` : 'button-selection'} 
+                                className={  activeButton === 'overview' ? `button-selection ${header.buttonSelectionActive}` : 'button-selection'} 
                                 onClick={() => {
                                     props.changeState('overview')      
                                     setActiveButton('overview')
