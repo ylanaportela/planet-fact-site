@@ -2,7 +2,7 @@ import Header from "../components/Header/Header"
 import Head from 'next/head'
 import Datas from '../data.json'
 import index from '../styles/index.module.scss'
-import { useMemo, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 
 export function getServerSideProps(context) {
 
@@ -32,11 +32,25 @@ export default function Home({ planet}) {
     return currentPlanet[state]
   }, [currentPlanet, state])
 
+
   if (!currentPlanet) {
     return <div>
       Planeta não existe
     </div>
   }
+
+  const renderImage = useMemo(()=>{
+    if(state === 'overview'){
+      return <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+    }
+
+    else if(state === 'structure'){
+      return <img src={ currentPlanet.images.internal } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+    } 
+    else{
+      return <img src={ currentPlanet.images.geology } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+    }
+  }, [currentPlanet, state])
 
 
   return (
@@ -55,19 +69,23 @@ export default function Home({ planet}) {
 
           <div className={index.informations}>
             <div className="image">
-              <img src={ currentPlanet.images.planet} className={index.image}/>
+              {renderImage}
             </div>
 
             <div className={index.text}>
-    
+
               <div className={index.planetName}>
-                <h2>{currentPlanet.name}</h2>
+                <h2>{currentPlanet.name.toLocaleUpperCase()}</h2>
               </div>
 
               <div className={index.paragraph}>
                 <p>{attribute.content}</p>
               </div>
-              <div className={index.source}></div>
+
+              <div className={index.source}>
+                <span>Source:</span>
+                <a href={attribute.source}>WIkipédia</a>
+              </div>
             </div>
 
           </div>
