@@ -2,7 +2,7 @@ import Header from "../components/Header/Header"
 import Head from 'next/head'
 import Datas from '../data.json'
 import index from '../styles/index.module.scss'
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 
 export function getServerSideProps(context) {
 
@@ -59,7 +59,7 @@ export default function Home({ planet}) {
             </div>
 
             <div className={index.text}>
-
+    
               <div className={index.planetName}>
                 <h2>{currentPlanet.name}</h2>
               </div>

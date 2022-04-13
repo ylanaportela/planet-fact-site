@@ -10,10 +10,21 @@ body{
   min-width: 100vw;
   min-height: 100vh;
   background-color: #070724;
+  color: #fff;
 }
 
 main{
   height: 100vh;
+}
+
+.button-selection{
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-size: 9px;
+  font-weight: bold;
+  font-family: style.$font-Spartan;
+  color: #FFFFFF50;
 }
 
 .mercury{
