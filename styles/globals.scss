@@ -27,34 +27,77 @@ main{
   color: #FFFFFF50;
 }
 
-.mercury{
-  fill: style.$icon-Mercury;
+
+ul{
+  .mercury{
+    fill: style.$icon-Mercury;
+  }
+  
+  .venus{
+    fill: style.$icon-Venus;
+  }
+  
+  .earth{
+    fill: style.$icon-Earth;
+  }
+  
+  .mars{
+    fill: style.$icon-Mars;
+  }
+  
+  .jupiter{
+    fill: style.$icon-Jupiter;
+  }
+  
+  .saturn{
+    fill: style.$icon-Saturn;
+  }
+  
+  .uranus{
+    fill: style.$icon-Uranus;
+  }
+  
+  .neptune{
+    fill: style.$icon-Neptune;
+  }
 }
 
-.venus{
-  fill: style.$icon-Venus;
-}
+.image{
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-.earth{
-  fill: style.$icon-Earth;
-}
+  .mercury{
+    width: style.$width-planet;
+  }
 
-.mars{
-  fill: style.$icon-Mars;
-}
+  .venus{
+    width: calc(style.$width-planet + 43px);
+  }
 
-.jupiter{
-  fill: style.$icon-Jupiter;
-}
-
-.saturn{
-  fill: style.$icon-Saturn;
-}
-
-.uranus{
-  fill: style.$icon-Uranus;
-}
-
-.neptune{
-  fill: style.$icon-Neptune;
+  .earth{
+    width: calc(style.$width-planet + 62px);
+  }
+  
+  .mars{
+    width: calc(style.$width-planet + 18px);
+  }
+  
+  .jupiter{
+    width: calc(style.$width-planet + 113px);
+  }
+  
+  .saturn{
+    width: calc(style.$width-planet + 147px);
+  }
+  
+  .uranus{
+    width: calc(style.$width-planet + 65px);
+  }
+  
+  .neptune{
+    width: calc(style.$width-planet + 62px);
+  }
 }
