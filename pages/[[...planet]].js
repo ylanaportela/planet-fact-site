@@ -48,7 +48,13 @@ export default function Home({ planet}) {
       return <img src={ currentPlanet.images.internal } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
     } 
     else{
-      return <img src={ currentPlanet.images.geology } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+      return (
+        <>
+          <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+          <div className={`${index.imageSurface} ${currentPlanet.name.toLocaleLowerCase()}`}></div>
+          
+        </>
+      )
     }
   }, [currentPlanet, state])
 
