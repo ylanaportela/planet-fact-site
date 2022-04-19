@@ -101,3 +101,18 @@ ul{
     width: calc(style.$width-planet + 62px);
   }
 }
+
+.imageSurface{
+  width: 109px;
+  height: 100px;
+  position: absolute;
+  bottom: 45%;
+}
+
+.imageSurface.earth{
+  background-image: url(#{style.$image-Earth});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
