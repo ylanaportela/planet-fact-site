@@ -2,7 +2,7 @@ import Header from "../components/Header/Header"
 import Head from 'next/head'
 import Datas from '../data.json'
 import index from '../styles/index.module.scss'
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 
 export function getServerSideProps(context) {
 
@@ -22,7 +22,6 @@ export function getServerSideProps(context) {
 export default function Home({ planet}) {
 
   const [ state, setState ] = useState('overview')
-  
 
   const currentPlanet = useMemo(() => {
     return Datas.find(data => data.name === planet)
@@ -41,22 +40,31 @@ export default function Home({ planet}) {
 
   const renderImage = useMemo(()=>{
     if(state === 'overview'){
-      return <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+      return (
+        <>
+          <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+    
+        </>
+      )
     }
 
     else if(state === 'structure'){
-      return <img src={ currentPlanet.images.internal } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+      return (
+        <>
+          <img src={ currentPlanet.images.internal } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
+  
+        </>
+      )
     } 
     else{
       return (
         <>
           <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
-          <div className={`${index.imageSurface} ${currentPlanet.name.toLocaleLowerCase()}`}></div>
-          
+          <div className={`imageSurface ${currentPlanet.name.toLocaleLowerCase()}`}></div>     
         </>
       )
     }
-  }, [currentPlanet, state])
+  }, [currentPlanet, state])  
 
 
   return (
@@ -70,6 +78,7 @@ export default function Home({ planet}) {
 
       <main>
         <Header changeState={state => setState(state)}/>
+        
 
         <section className={index.section}>
 
