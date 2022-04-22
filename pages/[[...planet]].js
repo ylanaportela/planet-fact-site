@@ -99,7 +99,10 @@ export default function Home({ planet}) {
 
               <div className={index.source}>
                 <span>Source:</span>
-                <a href={attribute.source}>WIkipédia</a>
+                <a href={attribute.source}>Wikipedia</a> 
+                <span>
+                <img src='/assets/icon-link.svg'/>
+                </span>
               </div>
             </div>
 
