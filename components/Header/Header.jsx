@@ -10,7 +10,7 @@ export default function Header(props) {
     
     const [ activeMenu, setActiveMenu ] = useState(false)
     const [width, setWidth] = useState(0)
-    const [activeButton, setActiveButton] = useState('overview')
+    const [activeButton, setActiveButton] = useState('overview')    
 
     useEffect(()=>{
         setWidth(window.innerWidth)
@@ -33,7 +33,7 @@ export default function Header(props) {
 
 
     return (
-        <header className={header.container}>
+        <header className={ activeMenu == false ? 'header-section' : 'header-nav'}>
 
             <div className={header.menu}>
 
@@ -55,6 +55,7 @@ export default function Header(props) {
             {   
                activeMenu === true ?
                <nav  className={header.nav}>
+            
                         <ul className={header.list}>
                             {Datas.map(data => {
                                 return (
@@ -75,7 +76,7 @@ export default function Header(props) {
                     </nav> 
                 :
 
-                <div className={header.selection}>
+                <div className={`${header.selection}`}>
                         <ul className={header.listSelection}>
                             <li>
                                 <button 
