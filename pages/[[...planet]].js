@@ -108,7 +108,27 @@ export default function Home({ planet}) {
 
           </div>
 
-          <div className={index.description}>
+          <div className={index.data}>
+
+            <div className={index.board}>
+              <div className={index.caption}>ROTATION TIME</div>
+              <div className={index.description}>{currentPlanet.rotation.toUpperCase()}</div>
+            </div>
+
+            <div className={index.board}>
+              <div className={index.caption}>REVOLUTION TIME</div>
+              <div className={index.description}>{currentPlanet.revolution.toUpperCase()}</div>
+            </div>
+
+            <div className={index.board}>
+              <div className={index.caption}>RADIUS</div>
+              <div className={index.description}>{currentPlanet.radius.toUpperCase()}</div>
+            </div>
+
+            <div className={index.board}>
+              <div className={index.caption}>AVERAGE TEMP</div>
+              <div className={index.description}>{currentPlanet.temperature.toUpperCase()}</div>
+            </div>
 
           </div>
 
