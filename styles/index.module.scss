@@ -1,7 +1,7 @@
 @use './style.scss' as style;
 
 .section{
-    height: 85%;
+    height: 87%;
     padding: 5%;
     background-image: url('../public/assets/background-stars.svg');
 }
@@ -10,9 +10,13 @@
     height: 100%;
 }
 
+.report{
+    height: 55%;
+}
+
 .text{
     padding: 9% 0%;
-    height: 55%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -45,11 +49,41 @@
 }
 
 .source a{
-    color:#FFFFFF90;
+    color:#8f606090;
     font-weight: 700;
 }
 
+.data{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.board{
+    align-items: center;
+    border: 1px solid #FFFFFF50;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    padding: 9px;
+
+    .caption{
+        font-size: 8px;
+        font-weight: bold;
+        color: #FFFFFF50;
+        font-family: style.$font-Spartan;
+    }
+
+    .description{
+        font-size: 20px;
+        font-family: style.$font-Antonio;   
+    }
+}
 
 
-
-
+@media (min-width: 768px){
+    .mobile{
+        display: none;
+    }
+}

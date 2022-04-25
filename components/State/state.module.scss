@@ -1,0 +1,19 @@
+.listSelection{
+    height: 7%;
+    display: flex;
+    justify-content: space-around;
+    list-style:none;
+    align-items: center;
+    border-bottom: 1px solid #FFFFFF50;
+}
+
+.listSelection > *{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.buttonSelectionActive{
+    color: #fff;
+}

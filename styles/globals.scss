@@ -20,12 +20,17 @@ main{
 
 header{
   width: 100%;
-  height: 15%;
+  height: 9%;
   display: flex;
   flex-direction: column;
 }
 
-.header-nav + section{
+.header-nav{
+  height: 100%;
+  overflow: hidden;
+}
+
+.header-nav + .list-selection-mobile, .header-nav + .list-selection-mobile  + section{
   display: none;
 }
 
@@ -177,4 +182,35 @@ ul{
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+}
+
+
+@media (min-width: 768px){
+
+  header{
+    justify-content: space-evenly;
+    border-bottom: 1px solid #FFFFFF20;
+  }
+
+
+  .header-nav{
+    height: 15%;
+  }
+
+  .header-nav + .list-selection-mobile{
+    display: none;
+  }
+  
+  .header-nav + .list-selection-mobile + section{
+    display: block;
+  }
+  
+}
+
+@media (min-width: 1024px){
+  header{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
 }
