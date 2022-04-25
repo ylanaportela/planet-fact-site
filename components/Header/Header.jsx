@@ -6,11 +6,10 @@ import { useEffect, useState } from 'react'
 import IconMenu from '../IconMenu'
 
 
-export default function Header(props) {
+export default function Header() {
     
     const [ activeMenu, setActiveMenu ] = useState(false)
-    const [width, setWidth] = useState(0)
-    const [activeButton, setActiveButton] = useState('overview')    
+    const [width, setWidth] = useState(0)   
 
     useEffect(()=>{
         setWidth(window.innerWidth)
@@ -21,7 +20,7 @@ export default function Header(props) {
         window.addEventListener('resize', ()=>{
             setWidth(window.innerWidth)
             if(width >= 768){
-                setActiveMenu(true)
+                setActiveMenu(false)
             }
         } )
     
@@ -33,7 +32,7 @@ export default function Header(props) {
 
 
     return (
-        <header className={ activeMenu == false ? 'header-section' : 'header-nav'}>
+        <header className={ activeMenu === true ? 'header header-nav' : 'header'}>
 
             <div className={header.menu}>
 
@@ -76,43 +75,7 @@ export default function Header(props) {
                     </nav> 
                 :
 
-                <div className={`${header.selection}`}>
-                        <ul className={header.listSelection}>
-                            <li>
-                                <button 
-                                className={  activeButton === 'overview' ? `button-selection ${header.buttonSelectionActive}` : 'button-selection'} 
-                                onClick={() => {
-                                    props.changeState('overview')      
-                                    setActiveButton('overview')
-                                }}>
-                                OVERVIEW
-                                </button>
-                            </li>
-                            <li>
-                                <button 
-                                className={  activeButton === 'structure' ? `button-selection ${header.buttonSelectionActive}` : 'button-selection'}  
-                                onClick={() => {
-                                    props.changeState('structure')
-                                    setActiveButton('structure')
-                                }}>
-                                STRUCTURE
-                                </button>
-                            </li>
-                            <li> 
-                                <button 
-                                className={  activeButton === 'geology' ? `button-selection ${header.buttonSelectionActive}` : 'button-selection'}  
-                                onClick={() => { 
-                                    props.changeState('geology')
-                                    setActiveButton('geology')
-
-                                }}>
-                                SURFACE
-                                </button>
-                            </li>
-
-                        </ul>
-                </div>
-    
+                null
             }
             
         </header>

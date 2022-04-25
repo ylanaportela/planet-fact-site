@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Datas from '../data.json'
 import index from '../styles/index.module.scss'
 import { useMemo, useState } from "react"
+import State from "../components/State/State"
 
 export function getServerSideProps(context) {
 
@@ -77,7 +78,8 @@ export default function Home({ planet}) {
       </Head>
 
       <main>
-        <Header changeState={state => setState(state)}/>
+        <Header/>
+        <State changeState={state => setState(state)}/>
         
 
         <section className={index.section}>
@@ -87,25 +89,31 @@ export default function Home({ planet}) {
               {renderImage}
             </div>
 
-            <div className={index.text}>
+            <div className={index.report}>
 
-              <div className={index.planetName}>
-                <h2>{currentPlanet.name.toLocaleUpperCase()}</h2>
-              </div>
+              <div className={index.text}>
 
-              <div className={index.paragraph}>
-                <p>{attribute.content}</p>
-              </div>
+                <div className={index.planetName}>
+                  <h2>{currentPlanet.name.toLocaleUpperCase()}</h2>
+                </div>
 
-              <div className={index.source}>
-                <span>Source:</span>
-                <a href={attribute.source}>Wikipedia</a> 
-                <span>
-                <img src='/assets/icon-link.svg'/>
-                </span>
+                <div className={index.paragraph}>
+                  <p>{attribute.content}</p>
+                </div>
+
+                <div className={index.source}>
+                  <span>Source:</span>
+                  <a href={attribute.source}>Wikipedia</a> 
+                  <span>
+                  <img src='/assets/icon-link.svg'/>
+                  </span>
+                </div>
+
               </div>
+ 
+              <State changeState={state => setState(state)}/>
+
             </div>
-
           </div>
 
           <div className={index.data}>
