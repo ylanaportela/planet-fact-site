@@ -67,7 +67,7 @@ export default function Home({ planet}) {
     }
   }, [currentPlanet, state])  
 
-
+  
   return (
 
     <div>
@@ -110,9 +110,9 @@ export default function Home({ planet}) {
                 </div>
 
               </div>
- 
-              <State changeState={state => setState(state)}/>
 
+              <State changeState={state => setState(state)}/>
+  
             </div>
           </div>
 
