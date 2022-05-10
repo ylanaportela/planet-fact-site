@@ -1,18 +1,23 @@
 import state from './state.module.scss'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
-export default function State(props){
 
-    const [activeButton, setActiveButton] = useState('overview')  
 
+export default function State({ changeState }){
+
+    const [activeButton, setActiveButton] = useState('overview')
+    const router = useRouter()
 
     return(
-        <ul className={`list-selection-mobile ${state.listSelection}`}>
+        
+        <ul className={`${state.listSelection} listSelection`}>
+        
         <li>
             <button 
-            className={  activeButton === 'overview' ? `button-selection ${state.buttonSelectionActive}` : 'button-selection'} 
+            className={  activeButton === 'overview' ? `button-selection ${state.buttonSelectionActive} ${router.asPath.toLocaleLowerCase().replace('/', '')}` : 'button-selection'} 
             onClick={() => {
-                props.changeState('overview')      
+                changeState('overview')      
                 setActiveButton('overview')
             }}>
             OVERVIEW
@@ -20,9 +25,9 @@ export default function State(props){
         </li>
         <li>
             <button 
-            className={  activeButton === 'structure' ? `button-selection ${state.buttonSelectionActive}` : 'button-selection'}  
+            className={  activeButton === 'structure' ? `button-selection ${state.buttonSelectionActive} ${router.asPath.toLocaleLowerCase().replace('/', '')}` : 'button-selection'}  
             onClick={() => {
-                props.changeState('structure')
+                changeState('structure')
                 setActiveButton('structure')
             }}>
             STRUCTURE
@@ -30,16 +35,16 @@ export default function State(props){
         </li>
         <li> 
             <button 
-            className={  activeButton === 'geology' ? `button-selection ${state.buttonSelectionActive}` : 'button-selection'}  
+            className={  activeButton === 'geology' ? `button-selection ${state.buttonSelectionActive} ${router.asPath.toLocaleLowerCase().replace('/', '')}` : 'button-selection'}  
             onClick={() => { 
-                props.changeState('geology')
+                changeState('geology')
                 setActiveButton('geology')
-
             }}>
             SURFACE
             </button>
         </li>
 
-    </ul>
+        
+        </ul>
     )
-}
+    }
