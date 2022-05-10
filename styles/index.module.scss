@@ -101,6 +101,7 @@
 
     .text{
         width: 50%;
+        padding: 4% 0%;
     }
 
     .planetName > *{
@@ -136,14 +137,14 @@
     }
 
     .report ul{
-        display: block;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5% 0%;
     }
   
 }
 
 @media (min-width: 1022px){
-
-
 
     .section{
         height: 100%;
@@ -182,6 +183,7 @@
     }
 
     .report ul{
+        padding: 0%;
         display: flex;
         justify-content: space-evenly;
     }

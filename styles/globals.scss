@@ -294,11 +294,11 @@ ul{
     }
     
     .jupiter{
-      width: calc(style.$width-planet + 113px * 2);
+      width: calc(style.$width-planet + 113px);
     }
     
     .saturn{
-      width: calc(style.$width-planet + 147px * 2);
+      width: calc(style.$width-planet + 147px * 1.5);
     }
     
     .uranus{
