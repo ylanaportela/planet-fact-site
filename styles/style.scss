@@ -3,14 +3,16 @@ $font-Spartan: 'Spartan', sans-serif;
 
 $gray-light: #838391;
 $gray-dark: #38384F;
-$greyish-blue: #419EBB;
-$blue: #2d68f0;
-$green: #1ec2a4;
-$orange: #CD5120;
-$purple: #6f2ed6;
-$yellow: #EDA249;
-$red: #D14C32;
-$red-live: #D83A34;
+
+
+$color-Mercury: #419EBB;
+$color-Venus: #EDA249;
+$color-Earth: #6f2ed6;
+$color-Mars: #D14C32;
+$color-Jupiter: #D83A34;
+$color-Saturn: #CD5120;
+$color-Uranus: #1ec2a4;
+$color-Neptune: #2d68f0;
 
 $width-planet: 111px;
 
@@ -23,7 +25,6 @@ $image-Saturn: '../public/assets/geology-saturn.png';
 $image-Uranus: '../public/assets/geology-uranus.png';
 $image-Neptune: '../public/assets/geology-neptune.png';
 
-
 $icon-Mercury: #DEF4FC;
 $icon-Venus: #F7CC7F;
 $icon-Earth: #545BFE;
@@ -32,4 +33,3 @@ $icon-Jupiter: #ECAD7A;
 $icon-Saturn: #FCCB6B;
 $icon-Uranus: #65F0D5;
 $icon-Neptune: #497EFA;
-

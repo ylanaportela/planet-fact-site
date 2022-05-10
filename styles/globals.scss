@@ -30,10 +30,6 @@ header{
   overflow: hidden;
 }
 
-.header-nav + .list-selection-mobile, .header-nav + .list-selection-mobile  + section{
-  display: none;
-}
-
 .button-selection{
   text-decoration: none;
   background-color: transparent;
@@ -44,6 +40,41 @@ header{
   color: #FFFFFF50;
 }
 
+.button-selection.mercury{
+  border-bottom: 3px solid style.$color-Mercury;
+}
+
+.button-selection.venus{
+  border-bottom: 3px solid style.$color-Venus;
+}
+
+.button-selection.earth{
+  border-bottom: 3px solid style.$color-Earth;
+}
+
+.button-selection.mars{
+  border-bottom: 3px solid style.$color-Mars;
+}
+
+.button-selection.jupiter{
+  border-bottom: 3px solid style.$color-Jupiter;
+}
+
+.button-selection.saturn{
+  border-bottom: 3px solid style.$color-Saturn;
+}
+
+.button-selection.uranus{
+  border-bottom: 3px solid style.$color-Uranus;
+}
+
+.button-selection.neptune{
+  border-bottom: 3px solid style.$color-Neptune;
+}
+
+.header-nav + ul + section{
+  display: none;
+}
 
 ul{
   .mercury{
@@ -78,6 +109,8 @@ ul{
     fill: style.$icon-Neptune;
   }
 }
+
+
 
 .image{
   height: 43%;
@@ -184,33 +217,259 @@ ul{
   background-position: center;
 }
 
-
 @media (min-width: 768px){
+
+  .header-nav + ul + section{
+    display: block;
+  }
+
+  ul{
+      .mercury{
+        background-color: style.$color-Mercury;
+      }
+      
+      .venus{
+        background-color: style.$color-Venus;
+      }
+      
+      .earth{
+        background-color: style.$color-Earth;
+      }
+      
+      .mars{
+        background-color: style.$color-Mars;
+      }
+      
+      .jupiter{
+        background-color: style.$color-Jupiter;
+      }
+      
+      .saturn{
+        background-color: style.$color-Saturn;
+      }
+      
+      .uranus{
+        background-color: style.$color-Uranus;
+      }
+      
+      .neptune{
+        background-color: style.$color-Neptune;
+      }
+  }
 
   header{
     justify-content: space-evenly;
     border-bottom: 1px solid #FFFFFF20;
   }
 
-
   .header-nav{
     height: 15%;
   }
 
-  .header-nav + .list-selection-mobile{
-    display: none;
+  .header-list > .header-item {
+    background-color: transparent;
   }
+
+  .image{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   
-  .header-nav + .list-selection-mobile + section{
-    display: block;
+    .mercury{
+      width: calc(style.$width-planet * 2);
+    }
+  
+    .venus{
+      width: calc(style.$width-planet + 43px * 2);
+    }
+  
+    .earth{
+      width: calc(style.$width-planet + 62px * 2);
+    }
+    
+    .mars{
+      width: calc(style.$width-planet + 18px * 2);
+    }
+    
+    .jupiter{
+      width: calc(style.$width-planet + 113px * 2);
+    }
+    
+    .saturn{
+      width: calc(style.$width-planet + 147px * 2);
+    }
+    
+    .uranus{
+      width: calc(style.$width-planet + 65px * 2);
+    }
+    
+    .neptune{
+      width: calc(style.$width-planet + 62px * 2);
+    }
   }
-  
+
+  .imageSurface{
+    height: 150px;
+    bottom: 43%;
+  }
+
+  .button-selection{
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #FFFFFF50;
+    text-align: left;
+    padding-left: 17px;
+    color: #fff;
+  }
+
+  .listSelection li:first-child .button-selection:before{
+    content: '01';
+    margin-right: 10px;
+    color: #FFFFFF50;
+  }
+
+  .listSelection li:nth-child(2n) .button-selection:before{
+      content: '02';
+      margin-right: 10px;
+      color: #FFFFFF50;
+  }
+
+  .listSelection li:last-child .button-selection:before{
+      content: '03';
+      margin-right: 10px;
+      color: #FFFFFF50;
+  }
 }
 
-@media (min-width: 1024px){
+@media (min-width: 1022px){
+
+  body{
+    overflow: hidden;
+  }
+
+  .header-nav{
+    height: 11%;
+  }
+
   header{
-    padding: 20px;
+    padding: 0% 2%;
     display: flex;
     flex-direction: row;
   }
+
+
+
+  .header-list > .header-item.mercury > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Mercury;
+  }
+
+  .header-list > .header-item.venus > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Venus;
+  }
+
+  .header-list > .header-item.earth > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Earth;
+  }
+  
+  .header-list > .header-item.mars > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Mars;
+  }
+  
+  .header-list > .header-item.jupiter > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Jupiter;
+  }
+  
+  .header-list > .header-item.saturn > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Saturn;
+  }
+  
+  .header-list > .header-item.uranus > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Uranus;
+  }
+  
+  .header-list > .header-item.neptune > a:focus{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    border-top: 5px solid style.$color-Neptune;
+  }
+
+
+  .image{
+    width: 60%;
+  
+    .mercury{
+      width: calc(style.$width-planet * 2.5);
+    }
+  
+    .venus{
+      width: calc(style.$width-planet + 43px * 5);
+    }
+  
+    .earth{
+      width: calc(style.$width-planet + 62px * 3);
+    }
+    
+    .mars{
+      width: calc(style.$width-planet + 18px * 5);
+    }
+    
+    .jupiter{
+      width: calc(style.$width-planet + 113px * 2);
+    }
+    
+    .saturn{
+      width: calc(style.$width-planet + 147px * 2);
+    }
+    
+    .uranus{
+      width: calc(style.$width-planet + 65px * 2.5);
+    }
+    
+    .neptune{
+      width: calc(style.$width-planet + 62px * 2.5);
+    }
+  }
+
+  .imageSurface{
+    height: 150px;
+    bottom: 30%;
+  }
+
+  .button-selection:hover{
+    cursor: pointer;
+  }
+
+
 }

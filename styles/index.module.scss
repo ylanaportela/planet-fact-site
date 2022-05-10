@@ -14,6 +14,10 @@
     height: 55%;
 }
 
+.report ul{
+    display: none;
+}
+
 .text{
     padding: 9% 0%;
     height: 100%;
@@ -36,6 +40,7 @@
     font-size: 11px;
     line-height: 22px;
     text-align: center;
+    font-family: style.$font-Spartan;
 }
 
 .source{
@@ -82,8 +87,104 @@
 }
 
 
+
 @media (min-width: 768px){
-    .mobile{
-        display: none;
+
+    .section{
+        height: 75%;
     }
+
+    .report{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .text{
+        width: 50%;
+    }
+
+    .planetName > *{
+        font-size: 48px;
+        text-align: left;
+    }
+
+    .paragraph{
+        text-align: left;
+    }
+
+    .source{
+        align-self: flex-start;
+        justify-content: flex-start;
+    }
+
+    .data{
+        height: 14%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .board{
+        width: 24%;
+        height: 100%;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: space-around;
+
+        .description{
+            font-size: 24px;
+        }
+    }
+
+    .report ul{
+        display: block;
+    }
+  
+}
+
+@media (min-width: 1022px){
+
+
+
+    .section{
+        height: 100%;
+        overflow: hidden;
+        padding: 0%;
+    }
+
+    .informations{
+        height: 65%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2%;
+    }
+
+    .report{
+        height: 100%;
+        width: 50%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .text{
+        width: 55%;
+        height: 60%;
+        padding: 5% 0%;
+        overflow: hidden;
+    }
+
+    .data{
+        justify-content: space-evenly;
+        padding: 0% 7%;
+
+        .board{
+            width: 20%;
+        }
+    }
+
+    .report ul{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+   
 }
