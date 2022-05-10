@@ -30,7 +30,6 @@ export default function Header() {
         activeMenu == false ? setActiveMenu(true) : setActiveMenu(false)
     }
 
-
     return (
         <header className={ activeMenu === true ? 'header header-nav' : 'header'}>
 
@@ -49,16 +48,15 @@ export default function Header() {
                 </div>
 
             </div>
-
-
+            
             {   
                activeMenu === true ?
                <nav  className={header.nav}>
             
-                        <ul className={header.list}>
+                        <ul className={`${header.list} header-list`} >
                             {Datas.map(data => {
                                 return (
-                                    <li key={data.name} className={header.item}>
+                                    <li key={data.name} className={`${header.item} header-item ${data.name.toLowerCase()}`}>
 
                                         <Icon name={`${header.oval} ${data.name.toLowerCase()}`} />
 
