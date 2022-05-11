@@ -33,18 +33,11 @@ export default function Home({ planet}) {
   }, [currentPlanet, state])
 
 
-  if (!currentPlanet) {
-    return <div>
-      Planeta não existe
-    </div>
-  }
-
   const renderImage = useMemo(()=>{
     if(state === 'overview'){
       return (
         <>
-          <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
-    
+          <img src={ currentPlanet.images.planet } className={`${currentPlanet.name.toLocaleLowerCase()}`}/>
         </>
       )
     }
@@ -52,20 +45,26 @@ export default function Home({ planet}) {
     else if(state === 'structure'){
       return (
         <>
-          <img src={ currentPlanet.images.internal } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
-  
+          <img src={ currentPlanet.images.internal } className={`${currentPlanet.name.toLocaleLowerCase()}`}/>
         </>
       )
     } 
     else{
       return (
         <>
-          <img src={ currentPlanet.images.planet } className={`${index.image} ${currentPlanet.name.toLocaleLowerCase()}`}/>
-          <div className={`imageSurface ${currentPlanet.name.toLocaleLowerCase()}`}></div>     
+          <img src={ currentPlanet.images.planet } className={`${currentPlanet.name.toLocaleLowerCase()}`}/>
+          <div className={` imageSurface ${currentPlanet.name.toLocaleLowerCase()}` }></div>     
         </>
       )
     }
   }, [currentPlanet, state])  
+
+
+  if (!currentPlanet) {
+    return <div>
+      Planeta não existe
+    </div>
+  }
 
   
   return (
