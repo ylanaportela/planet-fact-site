@@ -19,7 +19,8 @@ export default function State({ changeState }){
             onClick={() => {
                 changeState('overview')      
                 setActiveButton('overview')
-            }}>
+            }}
+            aria-label='Overview state'>
             OVERVIEW
             </button>
         </li>
@@ -29,7 +30,8 @@ export default function State({ changeState }){
             onClick={() => {
                 changeState('structure')
                 setActiveButton('structure')
-            }}>
+            }}
+            aria-label='Structure state'>
             STRUCTURE
             </button>
         </li>
@@ -39,7 +41,8 @@ export default function State({ changeState }){
             onClick={() => { 
                 changeState('geology')
                 setActiveButton('geology')
-            }}>
+            }}
+            aria-label='Surface state'>
             SURFACE
             </button>
         </li>

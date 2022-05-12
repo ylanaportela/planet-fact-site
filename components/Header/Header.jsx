@@ -42,7 +42,8 @@ export default function Header() {
                 <div>
                     <button 
                     className={header.button}
-                    onClick={handleClick}>
+                    onClick={handleClick}
+                    aria-label='Open Menu'>
                         <IconMenu name={activeMenu === false ? header.buttonDefault : header.buttonActive}/>
                     </button>
                 </div>
@@ -64,7 +65,7 @@ export default function Header() {
                                             <a className={header.link}>{data.name.toUpperCase()}</a>
                                         </Link>
                                         
-                                        <img src='/assets/icon-chevron.svg'/>
+                                        <img src='/assets/icon-chevron.svg' alt='Icon'/>
                                     </li>
                                 )
                             })  

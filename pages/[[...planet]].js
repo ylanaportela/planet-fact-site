@@ -37,7 +37,7 @@ export default function Home({ planet}) {
     if(state === 'overview'){
       return (
         <>
-          <img src={ currentPlanet.images.planet } className={`${currentPlanet.name.toLocaleLowerCase()}`}/>
+          <img src={ currentPlanet.images.planet } className={`${currentPlanet.name.toLocaleLowerCase()}`} alt='Planet Image'/>
         </>
       )
     }
@@ -45,14 +45,14 @@ export default function Home({ planet}) {
     else if(state === 'structure'){
       return (
         <>
-          <img src={ currentPlanet.images.internal } className={`${currentPlanet.name.toLocaleLowerCase()}`}/>
+          <img src={ currentPlanet.images.internal } className={`${currentPlanet.name.toLocaleLowerCase()}`}  alt='Planet Image'/>
         </>
       )
     } 
     else{
       return (
         <>
-          <img src={ currentPlanet.images.planet } className={`${currentPlanet.name.toLocaleLowerCase()}`}/>
+          <img src={ currentPlanet.images.planet } className={`${currentPlanet.name.toLocaleLowerCase()}`}  alt='Planet Image'/>
           <div className={` imageSurface ${currentPlanet.name.toLocaleLowerCase()}` }></div>     
         </>
       )
