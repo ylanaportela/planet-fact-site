@@ -104,7 +104,7 @@ export default function Home({ planet}) {
                   <span>Source:</span>
                   <a href={attribute.source}>Wikipedia</a> 
                   <span>
-                  <img src='/assets/icon-link.svg'/>
+                  <img src='/assets/icon-link.svg' alt='Icon for link'/>
                   </span>
                 </div>
 
